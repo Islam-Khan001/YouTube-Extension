@@ -1,3 +1,7 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .flt-button {
 
     /* You will not be able to apply any properties to it,
@@ -46,7 +50,7 @@ video {
     background-color: rgb(10, 10, 18);
     /* background-color: #fff; */
     position: absolute;
-    opacity: 75%;
+    /* opacity: 75%; */
     right: 1.5%;
     bottom: 9%;
     height: 25%;
@@ -56,5 +60,127 @@ video {
 
 #Speed {
     height: 2px;
+    color: white;
+    right: 2%;
+    
     background-color: white;
+    position: absolute;
+}
+
+#p-speed{
+    font-weight: 600;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 2%;
+}
+
+.speed-div{
+    top: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: red;
+}
+
+.filter-div{
+    width: 100%;
+    background-color: blue;
+    position: absolute;
+    height: 50px;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+#p-filter{
+    font-weight: 600;
+    font-size: 1.3rem;
+    left: 2%;
+    position: absolute;
+
+}
+
+#icon-arrow {
+    right: 3%;
+    position: absolute;
+}
+
+/* invert toggle button ----------------------------------------------------------------------------*/
+
+.invert-tog{
+    position: absolute;
+    background-color: green;
+    width: 100%;
+    height: 50px;
+}
+
+#main-invert{
+    position: absolute;
+    background-color: green;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.invert-p {
+    color: white;
+    left: 2%;
+    font-size: 1.3rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+}
+
+#track {
+    background-color: rgb(108, 104, 104);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    height: 20px;
+    width: 60px;
+    position: absolute;
+    right: 2%;
+    /* left: 50%;
+    
+    top: 50%; */
+    border-radius: 50px;
+    
+}
+
+#check-inp{
+    opacity: 0%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+#slider {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 0%;
+    background-color: rgb(144, 134, 134);
+    border-radius: 50%;
+    transition: left .1s ease-out;
+}
+
+#check-inp:checked + #main{
+    background-color: #ff1a1a;
+}
+
+#check-inp:checked + #slider{
+    left: 50%;
+    background-color: #fff;
+    
+  
 }

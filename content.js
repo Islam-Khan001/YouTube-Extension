@@ -1,8 +1,12 @@
 // alert("Testing is On");
 console.log("Hello from content.js");
 
+
+
 let player;
 let leftControls;
+
+let ytMenu = document.querySelector(".ytp-settings-menu");
 
 window.addEventListener("load", function () {
   player = document.querySelector("video");
@@ -10,7 +14,7 @@ window.addEventListener("load", function () {
   leftControls = document.querySelector(".ytp-right-controls");
 
   let filterButton = document.createElement("button");
-  filterButton.className = "flt-button ytp-buttodon";
+  filterButton.className = "flt-button ytp-button";
   filterButton.ariaKeyShortcuts = "z";
   filterButton.ariaLabel = "Full screen keyboard shortcut z";
   filterButton.title = "Extras (z)";
@@ -35,14 +39,36 @@ window.addEventListener("load", function () {
     }
   });
 
+  let invertToggle = document.createElement("div");
+  invertToggle.className = "invert-tog";
+  invertToggle.innerHTML = '<label id="main-invert"><p class="invert-p">Invert</p><label id="track"><input type="checkbox" id="check-inp"/><span id="slider"></span></label></label>';
+
+  let filterDiv = document.createElement("div");
+  filterDiv.className = "filter-div";
+  filterDiv.innerHTML = '<p id="p-filter">Filters</p><span id="icon-arrow">></span>';
+
+  let speedDiv = document.createElement("div");
+  speedDiv.className = "speed-div";
+  speedDiv.innerHTML = '<p id="p-speed">Speed (<span id="show-speed">1</span>x)</p><input type="range" min="0.25" max="10" step="0.25" value="1" id="Speed" aria-labelledby="speedLabel">';
+
+
+
+
+
   let myContainer = document.createElement("div");
   myContainer.className = "myContainer";
-  myContainer.innerHTML =
-    '<label for="Speed">Speed</label><input type="range" min="0.25" max="10" step="0.25" value="1" id="Speed" aria-labelledby="speedLabel">';
+  myContainer.appendChild(invertToggle);
+  myContainer.appendChild(filterDiv);
+  myContainer.appendChild(speedDiv);
+  // myContainer.innerHTML +=
+  //   '<label for="Speed">Speed</label><input type="range" min="0.25" max="10" step="0.25" value="1" id="Speed" aria-labelledby="speedLabel">';
 
   myContainer.style.display = "none";
-  let playerParent = player.parentNode;
-  playerParent.insertBefore(myContainer, player.nextSibling);
+  // let playerParent = player.parentNode;
+  // playerParent.insertBefore(myContainer, player.nextSibling);
+  // let menuParent = ytMenu.parentNode;
+  // ytMenu.append(myContainer);
+  ytMenu.insertAdjacentElement('afterend', myContainer);
   document.addEventListener("click", (event) => {
     if (
       !myContainer.contains(event.target) &&
@@ -52,13 +78,15 @@ window.addEventListener("load", function () {
     }
   });
 
+  let currSpeed = document.querySelector("#show-speed");
+
   document.addEventListener("click", function () {
     var speedRange = document.getElementById("Speed");
 
     speedRange.addEventListener("input", function () {
+      currSpeed.textContent = speedRange.value;
       player.playbackRate = speedRange.value;
       console.log("The Speed is ", speedRange.value);
-     
     });
   });
 });
