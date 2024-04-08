@@ -1,0 +1,60 @@
+.flt-button {
+
+    /* You will not be able to apply any properties to it,
+     because all the control of it is given to ytp-button class,
+     which is controlling all the properties of it
+     */
+    
+    background-color: transparent;
+    width: 48px;
+    height: 48px;
+    border: none;
+
+}
+
+#flt-icon {
+
+    height: 100%;
+    width: 22px;
+    padding-left: 5px;
+    border: none; 
+    filter: invert(100%);
+    background-color: transparent;
+
+
+}
+
+#flt-icon:hover {
+    cursor: pointer;
+
+}
+
+
+video {
+    /* filter: invert(100%); */
+    filter: saturate(150%);
+}
+
+.MyOwnPlayer {
+    /* filter:invert(100%); */
+    /* it is working    */
+
+}
+
+.myContainer {
+    z-index: 100;
+    background-color: rgb(10, 10, 18);
+    /* background-color: #fff; */
+    position: absolute;
+    opacity: 75%;
+    right: 1.5%;
+    bottom: 9%;
+    height: 25%;
+    width: 23%;
+    border-radius: 5px;
+}
+
+#Speed {
+    height: 2px;
+    background-color: white;
+}
