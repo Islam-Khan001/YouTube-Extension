@@ -35,19 +35,6 @@ window.addEventListener("load", function () {
     }
   });
 
-  // class="flt-button"
-  // aria-keyshortcuts="z"
-  // data-priority="10"
-  // data-title-no-tooltip="Extras"
-  // aria-label="Full screen keyboard shortcut z"
-  // title="Extras (z)"
-
-  // let filterButton = document.createElement("img");
-  // filterButton.src = "icon16.png";
-  // filterButton.className = "mytp-icon";
-  // filterButton.title = "Filter";
-  // leftControls.appendChild(filterButton);
-
   let myContainer = document.createElement("div");
   myContainer.className = "myContainer";
   myContainer.innerHTML =
@@ -56,33 +43,6 @@ window.addEventListener("load", function () {
   myContainer.style.display = "none";
   let playerParent = player.parentNode;
   playerParent.insertBefore(myContainer, player.nextSibling);
-
-  //------------------------------------------------------------------------------------------------------
-
-  //------------------------------------------------------------------------------------------
-
-  // filterButton.addEventListener("click", function (){
-  //   if(myContainer.style.display === "none"){
-  //     myContainer.style.display = "block";
-  //   } else {
-  //     myContainer.style.display = "none";
-  //   }
-  // });
-
-  // filterButton.addEventListener("keydown", function (event){
-  //   console.log("Key pressed:", event.key);
-  //   if(event.key == "z"){
-  //     if(myContainer.style.display === "none"){
-  //       myContainer.style.display = "block";
-  //     } else {
-  //       myContainer.style.display = "none";
-  //     }
-  //   }
-
-  // });
-
-  //------------------------------------------------------------------------------------------
-
   document.addEventListener("click", (event) => {
     if (
       !myContainer.contains(event.target) &&
@@ -94,15 +54,11 @@ window.addEventListener("load", function () {
 
   document.addEventListener("click", function () {
     var speedRange = document.getElementById("Speed");
-    // var speedValue = document.getElementById('speedValue');
 
     speedRange.addEventListener("input", function () {
-      // speedValue.innerText = 'Speed: ' + speedRange.value + 'x';
       player.playbackRate = speedRange.value;
       console.log("The Speed is ", speedRange.value);
-      // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      //   chrome.tabs.sendMessage(tabs[0].id, { speed: speedRange.value });
-      // });
+     
     });
   });
 });
