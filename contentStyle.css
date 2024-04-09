@@ -50,7 +50,7 @@ video {
     background-color: rgb(10, 10, 18);
     /* background-color: #fff; */
     position: absolute;
-    /* opacity: 75%; */
+    opacity: 80%;
     right: 1.5%;
     bottom: 9%;
     height: 25%;
@@ -78,16 +78,16 @@ video {
     top: 100px;
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .filter-div{
     width: 100%;
-    background-color: blue;
+    /* background-color: blue; */
     position: absolute;
     height: 50px;
     top: 50px;
@@ -109,18 +109,26 @@ video {
     position: absolute;
 }
 
+#icon-reset{
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 35%;
+}
+
 /* invert toggle button ----------------------------------------------------------------------------*/
 
 .invert-tog{
     position: absolute;
-    background-color: green;
+    /* background-color: green; */
     width: 100%;
     height: 50px;
 }
 
 #main-invert{
     position: absolute;
-    background-color: green;
+    /* background-color: green; */
     width: 100%;
     height: 50px;
     display: flex;

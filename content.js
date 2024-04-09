@@ -49,7 +49,7 @@ window.addEventListener("load", function () {
 
   let speedDiv = document.createElement("div");
   speedDiv.className = "speed-div";
-  speedDiv.innerHTML = '<p id="p-speed">Speed (<span id="show-speed">1</span>x)</p><input type="range" min="0.25" max="10" step="0.25" value="1" id="Speed" aria-labelledby="speedLabel">';
+  speedDiv.innerHTML = '<p id="p-speed">Speed (<span id="show-speed">1</span>x)</p><span id="icon-reset">@</span><input type="range" min="0.25" max="10" step="0.25" value="1" id="Speed" aria-labelledby="speedLabel">';
 
 
 
@@ -78,11 +78,18 @@ window.addEventListener("load", function () {
     }
   });
 
+  var speedRange = document.getElementById("Speed");
   let currSpeed = document.querySelector("#show-speed");
+  let resetSpeed = document.querySelector("#icon-reset");
+
+  resetSpeed.addEventListener("click", () => {
+    player.playbackRate = 1;
+    var speedRange = document.getElementById("Speed");
+    speedRange.value = 1; 
+    currSpeed.textContent = 1;
+  });
 
   document.addEventListener("click", function () {
-    var speedRange = document.getElementById("Speed");
-
     speedRange.addEventListener("input", function () {
       currSpeed.textContent = speedRange.value;
       player.playbackRate = speedRange.value;
