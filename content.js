@@ -1,4 +1,4 @@
-// alert("Testing is On");
+alert("Testing is On");
 console.log("Hello from content.js");
 
 
@@ -28,6 +28,7 @@ window.addEventListener("load", function () {
       myContainer.style.display = "block";
     } else {
       myContainer.style.display = "none";
+      filterContainer.style.display = "none";
     }
   }
 
@@ -51,19 +52,40 @@ window.addEventListener("load", function () {
   speedDiv.className = "speed-div";
   speedDiv.innerHTML = '<p id="p-speed">Speed (<span id="show-speed">1</span>x)</p><span id="icon-reset">@</span><input type="range" min="0.25" max="10" step="0.25" value="1" id="Speed" aria-labelledby="speedLabel">';
 
+  let saturateDiv = document.createElement("div");
+  saturateDiv.className = "saturate-div";
+  saturateDiv.innerHTML = '<label for="saturate-inp">Saturation</label><input type="range" min="10" max="190" step="10" value="100" id="saturate-inp" aria-labelledby="speedLabel">';
 
+  let contrastDiv = document.createElement("div");
+  contrastDiv.className = "contrast-div";
+  contrastDiv.innerHTML = '<label for="contrast-inp">Saturation</label><input type="range" min="10" max="190" step="10" value="100" id="contrast-inp" aria-labelledby="speedLabel">';
 
+  let brightDiv = document.createElement("div");
+  brightDiv.className = "bright-div";
+  brightDiv.innerHTML = '<label for="brightness-inp">Brightness</label><input type="range" min="10" max="190" step="10" value="100" id="brightness-inp" aria-labelledby="speedLabel">';
 
+  let filterContainer = document.createElement("div");
+  filterContainer.id = "filter-container";
+  filterContainer.innerHTML = '<label for="saturate-inp">Saturation</label><input type="range" min="10" max="190" step="10" value="1" id="saturate-inp" aria-labelledby="saturateLabel"><input type="range" min="10" max="190" step="10" value="1" id="contrast-inp" aria-labelledby="contrastLabel"><input type="range" min="10" max="190" step="10" value="1" id="brightness-inp" aria-labelledby="brightnessLabel">';
 
+  
+  
+  
+  
+  
+  
+  
   let myContainer = document.createElement("div");
   myContainer.className = "myContainer";
   myContainer.appendChild(invertToggle);
   myContainer.appendChild(filterDiv);
   myContainer.appendChild(speedDiv);
+  myContainer.appendChild(filterContainer);
   // myContainer.innerHTML +=
   //   '<label for="Speed">Speed</label><input type="range" min="0.25" max="10" step="0.25" value="1" id="Speed" aria-labelledby="speedLabel">';
-
+  
   myContainer.style.display = "none";
+  filterContainer.style.display = "none";
   // let playerParent = player.parentNode;
   // playerParent.insertBefore(myContainer, player.nextSibling);
   // let menuParent = ytMenu.parentNode;
@@ -75,20 +97,21 @@ window.addEventListener("load", function () {
       !filterButton.contains(event.target)
     ) {
       myContainer.style.display = "none";
+      filterContainer.style.display = "none";
     }
   });
-
+  
   var speedRange = document.getElementById("Speed");
   let currSpeed = document.querySelector("#show-speed");
   let resetSpeed = document.querySelector("#icon-reset");
-
+  
   resetSpeed.addEventListener("click", () => {
     player.playbackRate = 1;
     var speedRange = document.getElementById("Speed");
     speedRange.value = 1; 
     currSpeed.textContent = 1;
   });
-
+  
   document.addEventListener("click", function () {
     speedRange.addEventListener("input", function () {
       currSpeed.textContent = speedRange.value;
@@ -96,4 +119,25 @@ window.addEventListener("load", function () {
       console.log("The Speed is ", speedRange.value);
     });
   });
+
+  let checkInput = document.querySelector("#check-inp");
+  
+  checkInput.addEventListener("click", () => {
+    // console.log("Status : ", checkInput.checked);
+    if(checkInput.checked){
+      player.style.filter = "invert(100%)";
+    }
+    else{
+      player.style.filter = "invert(0%)";
+    }
+  });
+  
+  let iconArrow = document.querySelector("#icon-arrow");
+
+  iconArrow.addEventListener("click", () => {
+    console.log("clicked on iconArrow");
+    filterContainer.style.display = "block";
+  });
+  
+  
 });
