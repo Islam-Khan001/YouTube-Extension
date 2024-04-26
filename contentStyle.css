@@ -233,7 +233,20 @@ video {
     border-top-right-radius: 5px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.852);
     /* background-color: rgb(59, 59, 90); */
+    /* cursor: pointer; */
+    
+}
+
+#span-filterExit{
+    /* background-color: #ff1a1a; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 25px;
     cursor: pointer;
+    left: 2%;
+    position: absolute;
     
 }
 
@@ -252,6 +265,7 @@ video {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 1.3rem;
+    cursor: pointer;
 }
 
 #saturate-inp{
