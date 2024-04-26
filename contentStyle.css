@@ -69,6 +69,10 @@ video {
     /* width: auto; */
     border-radius: 5px;
     display: flex;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .invert-tog{
