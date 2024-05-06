@@ -44,11 +44,11 @@ video {
     filter: saturate(150%);
 }
 
-.MyOwnPlayer {
+/* .MyOwnPlayer { */
     /* filter:invert(100%); */
     /* it is working    */
 
-}
+/* } */
 
 .myContainer {
     z-index: 100;
@@ -74,6 +74,9 @@ video {
     -ms-user-select: none;
     user-select: none;
 }
+
+
+/* invert toggle button ----------------------------------------------------------------------------*/
 
 .invert-tog{
     /* position: absolute; */
@@ -429,11 +432,11 @@ video {
 /* Slider Customizations---------------------------------------------------------------------------- */
 
 input::-webkit-slider-runnable-track {
+    /* height: 2px; */
     display: block;
     box-sizing:border-box;
     appearance: none;
     width: 100%;
-    /* height: 2px; */
     border-radius: 5px;
     background: solid #ff1a1a;
     outline: none;
@@ -444,16 +447,31 @@ input::-webkit-slider-runnable-track {
 }
   
 input[type=range]::-moz-range-track {
-    /* height: 3px; */
-    background-color: #ff1a1a;
-    /* fill: #ff1a1a; */
-
-
+    display: block;
+    box-sizing:border-box;
+    appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    background: solid #ff1a1a;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    fill: #ff1a1a;
+    color: #ff1a1a;
 }
   
 input[type=range]::-ms-track {
-    /* height: 3px; */
-    background-color: grey;
+    display: block;
+    box-sizing:border-box;
+    appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    background: solid #ff1a1a;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    fill: #ff1a1a;
+    color: #ff1a1a;
 
 }
 
@@ -494,7 +512,6 @@ input::-webkit-slider-thumb {
   
   
 
-/* invert toggle button ----------------------------------------------------------------------------*/
 
 
 

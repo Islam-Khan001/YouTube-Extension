@@ -151,7 +151,11 @@ window.addEventListener("load", function () {
   });
 
   function updateFilters() {
-    player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%)`;
+    if (checkInput.checked){
+      player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%) invert(100%)`;
+    } else {
+      player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%)`;
+    }
   }
 
   // ----------------------------------------------------------------------------------
@@ -200,11 +204,12 @@ window.addEventListener("load", function () {
 
   checkInput.addEventListener("click", () => {
     // console.log("Status : ", checkInput.checked);
-    if (checkInput.checked) {
-      player.style.filter = "invert(100%)";
-    } else {
-      player.style.filter = "invert(0%)";
-    }
+    // if (checkInput.checked) {
+    //   player.style.filter = "invert(100%)";
+    // } else {
+    //   player.style.filter = "invert(0%)";
+    // }
+    updateFilters();
   });
 
   let iconArrow = document.querySelector("#icon-arrow");
