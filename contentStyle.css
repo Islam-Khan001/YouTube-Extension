@@ -39,10 +39,10 @@
 }
 
 
-video {
+/* video { */
     /* filter: invert(100%); */
-    filter: saturate(150%);
-}
+    /* filter: saturate(150%); */
+/* } */
 
 /* .MyOwnPlayer { */
     /* filter:invert(100%); */
