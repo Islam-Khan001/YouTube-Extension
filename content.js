@@ -1,8 +1,14 @@
 // alert("Testing is On");
-console.log("Hello from content.js");
+console.log("Hello from content.js, i am working");
 
 let player;
 let leftControls;
+
+let videoContainer = document.querySelector(".html5-video-container");
+let speedIndDiv = document.createElement("div");
+speedIndDiv.className = "speed-ind-div"
+speedIndDiv.innerHTML = '<p id="speed-ind"><span id="speed-ind-span">1</span>x</p>';
+videoContainer.insertAdjacentElement("afterend", speedIndDiv);
 
 let ytMenu = document.querySelector(".ytp-settings-menu");
 
@@ -35,9 +41,11 @@ window.addEventListener("load", function () {
   }
 
   filterButton.addEventListener("click", toggleMyContainer);
-  filterButton.addEventListener("keydown", function (event) {
-    if (event.key == "z" && event.target == filterButton) {
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "z") {
       // event.preventDefault();
+      console.log("pressed z");
+
       toggleMyContainer();
     }
   });
@@ -151,9 +159,11 @@ window.addEventListener("load", function () {
   });
 
   function updateFilters() {
+    console.log("sat from func ", saturateRange.value);
     if (checkInput.checked){
       player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%) invert(100%)`;
     } else {
+      console.log("sat from else ", saturateRange.value);
       player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%)`;
     }
   }
@@ -196,8 +206,66 @@ window.addEventListener("load", function () {
     speedRange.addEventListener("input", function () {
       currSpeed.textContent = speedRange.value;
       player.playbackRate = speedRange.value;
-      console.log("The Speed is ", speedRange.value);
     });
+  });
+
+  let speedIndicator = document.getElementById("speed-ind-span");
+
+  function showSpeedInd(){
+    speedIndDiv.style.opacity = '100%'
+    setTimeout(() => {
+      speedIndDiv.style.opacity = '0%';      
+    }, 4000);
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "s" && player.playbackRate < 10 && !(event.key == ' ')) {
+      // event.preventDefault();
+      player.playbackRate +=0.25;
+      speedRange.value = player.playbackRate;
+      currSpeed.textContent = speedRange.value;
+      speedIndicator.textContent = player.playbackRate;
+      showSpeedInd();      
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "a" && player.playbackRate > 0.25 && !(event.key == ' ')) {
+      // event.preventDefault();
+      player.playbackRate -=0.25;
+      speedRange.value = player.playbackRate;
+      currSpeed.textContent = speedRange.value;
+      speedIndicator.textContent = player.playbackRate;
+      showSpeedInd();      
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "d" && !(event.key == ' ')) {
+      // event.preventDefault();
+      player.playbackRate = 1;
+      speedRange.value = player.playbackRate;
+      currSpeed.textContent = 1;
+      speedIndicator.textContent = 1;
+      showSpeedInd();      
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "q") {
+      // event.preventDefault();
+      saturateRange.value -= 10;
+      updateFilters();            
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "w") {
+      // event.preventDefault();
+      saturateRange.value += 10;
+      console.log("sat from value ", saturateRange.value);
+      updateFilters();            
+    }
   });
 
   let checkInput = document.querySelector("#check-inp");
@@ -210,6 +278,21 @@ window.addEventListener("load", function () {
     //   player.style.filter = "invert(0%)";
     // }
     updateFilters();
+  });
+
+
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "x") {
+      // event.preventDefault();
+      if(checkInput.checked){
+        checkInput.checked = false;
+        updateFilters();
+      } else {
+        checkInput.checked = true;
+        updateFilters();
+      }
+    }
   });
 
   let iconArrow = document.querySelector("#icon-arrow");
