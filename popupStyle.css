@@ -66,6 +66,11 @@ p{
 
 }
 
+.middle-a{
+    border-left: 1px solid #313d4e;
+    border-right: 1px solid #313d4e;
+}
+
 a { 
     display: block;
     color: aliceblue;  
@@ -75,7 +80,7 @@ a {
     /* background-color: aqua; */
     display: flex;
     justify-content: center;
-    column-gap: 20px;
+    column-gap: 5px;
     align-items: center;
 }
 
@@ -148,7 +153,7 @@ a:hover{
 #help:checked + .helps {
     /* border-top: 1px solid rgb(64, 64, 64); */
     /* display: block; */
-    height: 160px;
+    height: 225px;
     /* height: auto; */
 }
 
@@ -159,6 +164,20 @@ a:hover{
     height: auto;
     text-align:left;
     /* background-color: aqua; */
+}
+
+.helps a {
+
+    height: auto;
+    display: block;
+
+    text-align: right;
+
+}
+
+.normal-p{
+    margin-top: 5px;
+    font-weight: normal;
 }
 
 

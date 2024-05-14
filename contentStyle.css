@@ -26,12 +26,15 @@
     font-size: 1.4rem;
     font-weight: 700;
     background-color: #000000;
+    /* top right bottom left */
+    /* padding: 2px 12px 2px 12px;  */
     padding: 2px;
     opacity: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
+    min-width: 70px;
+    width: auto;
     height: 30px;
     border-radius: 20px;
 

@@ -7,7 +7,7 @@ let leftControls;
 let videoContainer = document.querySelector(".html5-video-container");
 let speedIndDiv = document.createElement("div");
 speedIndDiv.className = "speed-ind-div"
-speedIndDiv.innerHTML = '<p id="speed-ind"><span id="speed-ind-span">1</span>x</p>';
+speedIndDiv.innerHTML = '<p id="speed-ind"><span id="speed-ind-span">1</span></p>';
 videoContainer.insertAdjacentElement("afterend", speedIndDiv);
 
 let ytMenu = document.querySelector(".ytp-settings-menu");
@@ -75,17 +75,17 @@ window.addEventListener("load", function () {
   let saturateDiv = document.createElement("div");
   saturateDiv.className = "saturate-div";
   saturateDiv.innerHTML =
-    '<label id="p-saturation" for="saturate-inp">Saturation</label><span id="saturate-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="10" max="190" step="10" value="100" id="saturate-inp" aria-labelledby="saturateLabel">';
+    '<label id="p-saturation" for="saturate-inp">Saturation</label><span id="saturate-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="0" max="200" step="10" value="100" id="saturate-inp" aria-labelledby="saturateLabel">';
 
   let contrastDiv = document.createElement("div");
   contrastDiv.className = "contrast-div";
   contrastDiv.innerHTML =
-    '<label id="p-contrast" for="contrast-inp">Contrast</label><span id="contrast-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="10" max="190" step="10" value="100" id="contrast-inp" aria-labelledby="contrastLabel">';
+    '<label id="p-contrast" for="contrast-inp">Contrast</label><span id="contrast-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="50" max="150" step="5" value="100" id="contrast-inp" aria-labelledby="contrastLabel">';
 
   let brightDiv = document.createElement("div");
   brightDiv.className = "bright-div";
   brightDiv.innerHTML =
-    '<label id="p-brightness" for="brightness-inp">Brightness</label><span id="brightness-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="10" max="190" step="10" value="100" id="brightness-inp" aria-labelledby="brightLabel">';
+    '<label id="p-brightness" for="brightness-inp">Brightness</label><span id="brightness-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="50" max="150" step="10" value="100" id="brightness-inp" aria-labelledby="brightLabel">';
 
   let filterContainer = document.createElement("div");
   filterContainer.id = "filter-container";
@@ -135,10 +135,12 @@ window.addEventListener("load", function () {
     console.log("clicked on exit icon");
   });
 
-  resetAllFilters.addEventListener("click", () => {
+  function resetAllFs(){
     saturateRange.value = brightRange.value = contrastRange.value = 100;
     updateFilters();
-  });
+  };
+
+  resetAllFilters.addEventListener("click", resetAllFs);
 
   // ---------------------------------------------------------------------------------
 
@@ -159,11 +161,11 @@ window.addEventListener("load", function () {
   });
 
   function updateFilters() {
-    console.log("sat from func ", saturateRange.value);
+    // console.log("sat from func ", saturateRange.value);
     if (checkInput.checked){
       player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%) invert(100%)`;
     } else {
-      console.log("sat from else ", saturateRange.value);
+      // console.log("sat from else ", saturateRange.value);
       player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%)`;
     }
   }
@@ -209,6 +211,16 @@ window.addEventListener("load", function () {
     });
   });
 
+  let speedIndP = document.getElementById('speed-ind')
+
+  function addPadding(){
+    speedIndP.style.padding = '2px 12px 2px 12px'
+  }
+
+  function removePadding(){
+    speedIndP.style.padding = '2px'
+  }
+
   let speedIndicator = document.getElementById("speed-ind-span");
 
   function showSpeedInd(){
@@ -224,7 +236,8 @@ window.addEventListener("load", function () {
       player.playbackRate +=0.25;
       speedRange.value = player.playbackRate;
       currSpeed.textContent = speedRange.value;
-      speedIndicator.textContent = player.playbackRate;
+      speedIndicator.textContent = (player.playbackRate).toFixed(2) + 'x';
+      removePadding();
       showSpeedInd();      
     }
   });
@@ -235,7 +248,8 @@ window.addEventListener("load", function () {
       player.playbackRate -=0.25;
       speedRange.value = player.playbackRate;
       currSpeed.textContent = speedRange.value;
-      speedIndicator.textContent = player.playbackRate;
+      speedIndicator.textContent = (player.playbackRate).toFixed(2) + 'x';
+      removePadding();
       showSpeedInd();      
     }
   });
@@ -246,7 +260,8 @@ window.addEventListener("load", function () {
       player.playbackRate = 1;
       speedRange.value = player.playbackRate;
       currSpeed.textContent = 1;
-      speedIndicator.textContent = 1;
+      speedIndicator.textContent = '1.00x';
+      removePadding();
       showSpeedInd();      
     }
   });
@@ -255,16 +270,63 @@ window.addEventListener("load", function () {
     if (event.key == "q") {
       // event.preventDefault();
       saturateRange.value -= 10;
-      updateFilters();            
+      updateFilters(); 
+
+      addPadding();
+      speedIndicator.textContent = 'Saturation : ' + saturateRange.value/100;
+      showSpeedInd();          
     }
   });
 
   document.addEventListener("keydown", function (event) {
     if (event.key == "w") {
       // event.preventDefault();
-      saturateRange.value += 10;
-      console.log("sat from value ", saturateRange.value);
-      updateFilters();            
+      // console.log("Before : ", saturateRange.value);
+      // var currentValue = parseInt(saturateRange.value);
+      saturateRange.value = parseInt(saturateRange.value) + 10;
+      // currentValue += 10;
+      // saturateRange.value = currentValue;
+      // console.log("After : ", saturateRange.value);
+      updateFilters();  
+
+      addPadding();
+      speedIndicator.textContent = 'Saturation : ' + saturateRange.value/100;
+      showSpeedInd();          
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "e") {
+      // event.preventDefault();
+      contrastRange.value -= 5;
+      updateFilters(); 
+      
+      addPadding();      
+      speedIndicator.textContent = 'Contrast : ' + (contrastRange.value/100).toFixed(2);
+      showSpeedInd(); 
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "r") {
+      // event.preventDefault();
+      contrastRange.value = parseInt(contrastRange.value) + 5;
+      // console.log("sat from value ", saturateRange.value);
+      updateFilters();  
+
+      addPadding();      
+      speedIndicator.textContent = 'Contrast : ' + (contrastRange.value/100).toFixed(2);
+      showSpeedInd(); 
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "c") {
+      // event.preventDefault();
+      resetAllFs();
+      addPadding();      
+      speedIndicator.textContent = 'Filters Cleared';
+      showSpeedInd(); 
     }
   });
 
