@@ -1,15 +1,20 @@
 {
     "manifest_version": 3,
     "name": "YouTube Controls (For Students)",
-    "version": "1.0",
+    "version": "0.0.1",
     "description": "A Chrome extension that gives you more control over YouTube.",
     "permissions": ["activeTab", "scripting"],
+    "icons": {
+      "16": "myicon16.png",
+      "48": "myicon48.png",
+      "128": "myicon128.png"
+  },
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+        "16": "myicon16.png",
+        "48": "myicon48.png",
+        "128": "myicon128.png"
       }
     },
     "background": {
