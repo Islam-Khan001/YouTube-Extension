@@ -321,7 +321,7 @@ window.addEventListener("load", function () {
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "c") {
+    if (event.key == "v") {
       // event.preventDefault();
       resetAllFs();
       addPadding();      

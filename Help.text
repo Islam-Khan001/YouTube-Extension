@@ -24,6 +24,7 @@ Delve into the realm of visual customization with our innovative filters control
 - w: Increase saturation by 0.1 increments.
 - e: Decrease contrast by 0.5 increments.
 - r: Increase contrast by 0.5 increments.
+- v: Clears all filters.
 
 In addition to these standard adjustments, our extension introduces a revolutionary "invert" filter to alleviate eye strain caused by bright backgrounds commonly found in educational videos. By toggling the invert filter using the x key, users can seamlessly mitigate eye fatigue and prolong their study sessions with ease.
 
