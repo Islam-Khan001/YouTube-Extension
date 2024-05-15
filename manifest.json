@@ -3,6 +3,8 @@
     "name": "YouTube Controls (For Students)",
     "version": "0.0.1",
     "description": "A Chrome extension that gives you more control over YouTube.",
+    "author": "Islam kathat",
+    "homepage_url": "https://github.com/Islam-Khan001",
     "permissions": ["activeTab", "scripting"],
     "icons": {
       "16": "myicon16.png",
