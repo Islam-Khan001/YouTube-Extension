@@ -15,4 +15,9 @@
 //       chrome.tabs.sendMessage(tabs[0].id, { speed: speedRange.value });
 //     });
 //   });
+
+// let linkedin = document.getElementById('linkedin');
+
+// linkedin.title = "Linked is currently not working, it will take you to my GitHub";
+
   

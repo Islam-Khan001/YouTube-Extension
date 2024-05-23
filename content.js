@@ -223,11 +223,16 @@ window.addEventListener("load", function () {
 
   let speedIndicator = document.getElementById("speed-ind-span");
 
+  let clearSTInd;
+
   function showSpeedInd(){
+    if(clearSTInd){
+      clearTimeout(clearSTInd);
+    }
     speedIndDiv.style.opacity = '100%'
-    setTimeout(() => {
+    clearSTInd = setTimeout(() => {
       speedIndDiv.style.opacity = '0%';      
-    }, 4000);
+    }, 1000);
   }
 
   document.addEventListener("keydown", function (event) {
@@ -367,3 +372,8 @@ window.addEventListener("load", function () {
     filterContainer.style.display = "block";
   });
 });
+
+
+
+
+// Some of the code is in comments for testing purposes and for some future funtionalities that have not been figured out yet
