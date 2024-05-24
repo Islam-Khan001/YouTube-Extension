@@ -36,8 +36,7 @@ p{
     font-size: var(--font-size);
     font-weight: 600;
     color: aliceblue;
-    /* padding-left: 5px;
-    padding-right: 5px; */
+
 }
 
 
@@ -48,9 +47,6 @@ p{
     background-color: #2d344b;
     height: 20%;
     width: 100%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 
 }
 
@@ -74,20 +70,14 @@ p{
 a { 
     display: block;
     color: aliceblue;  
-    /* padding-left: 20px; */
     width: 100%;
     height: 40px;
-    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     column-gap: 5px;
     align-items: center;
 }
 
-/* #linkedin:hover {
-    
-
-} */
 
 a:hover{
     background-color: #232a3e;
@@ -98,24 +88,15 @@ a:hover{
     width: 20px;
 }
 
-/* #help-container{
-    height: auto;
-    width: 100%;
-    background-color: red;
 
-} */
 
 #help-label{
-    /* position: absolute; */
     color: aliceblue;
-    /* right: 0%;
-    top: 0%; */
     background-color: #1e293b;
     display: block;
     width: 100%;
     text-align: right;
-    /* position: relative;
-    right: 0%; */
+ 
 
 }
 
@@ -131,44 +112,30 @@ a:hover{
 #label-arrow{
     height: 20px;
     width: 20px;
-    /* padding-left: 10px; */
 }
 
 #help{
     display: none;
 }
 
-/* #help {
-} */
-
-
-
 .helps{
    
-    /* position: absolute; */
     width: 100%;
     height: 0px;
     overflow: hidden;
-    /* display: none; */
-    /* background-color: yellow; */
     transition: height .3s ease;
 
 }
 
 #help:checked + .helps {
-    /* border-top: 1px solid rgb(64, 64, 64); */
-    /* display: block; */
     height: 225px;
-    /* height: auto; */
 }
 
 .helps p {
-    /* position: absolute; */
     display: block;
     padding-left: 2%;
     height: auto;
     text-align:left;
-    /* background-color: aqua; */
 }
 
 .helps a {
@@ -184,32 +151,3 @@ a:hover{
     margin-top: 5px;
     font-weight: normal;
 }
-
-
- /* For cute face in next version ----------------------------- */
-
-/* .helps a {
-    display: block;
-} */
-
-/* .pikachu-container{
-
-    background-color: #f4df3e;
-    height: 100%;
-    width: 50%;
-
-} */
-
-/* #sad{
-    height: 100%;
-    width: 100%;
-}
-
-#happy{
-    position: absolute;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-
-    height: 100%;
-} */
