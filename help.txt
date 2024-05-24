@@ -1,0 +1,130 @@
+Author - Islam khan;
+
+YouTube Controls (For Students)
+
+Enhance Your YouTube Learning Experience ---------------------------------------------------------------------
+
+YouTube Controls (For Students) is a versatile browser extension carefully crafted to enhance productivity and enrich the learning journey of students utilizing YouTube as an educational resource. Tailored with an array of intuitive controls, this extension transcends the conventional YouTube experience, equipping users with enhanced functionalities to navigate, customize, and optimize their study sessions. Version 0.0.1 introduces a comprehensive suite of controls, each designed to cater to specific aspects of the learning process:
+
+1. Playback Speed Control: Unlocking the Power of Pace -------------------------------------------------------------------
+
+Experience the freedom to tailor video playback speed to your individual learning preferences with our advanced playback speed control feature. While YouTube offers basic playback speed adjustment options, our extension elevates this functionality to unprecedented levels. With the ability to adjust playback speed up to 10x, users can accelerate or decelerate video content to suit their pace of comprehension. Moreover, our intuitive keyboard shortcuts streamline the process, allowing users to effortlessly modify playback speed without disrupting their workflow. Harness the power of pace with the following keyboard shortcuts:
+
+- a: Decrease playback speed by 0.25 increments.
+- s: Increase playback speed by 0.25 increments.
+- d: Reset playback speed to the default setting of 1x.
+
+Whether you're seeking to breeze through review videos or dive deep into complex lectures, our playback speed control puts you in the driver's seat of your learning experience.
+
+2. Filters Control: Enhancing Visual Clarity  ----------------------------------------------------------------------------
+
+Delve into the realm of visual customization with our innovative filters control feature, designed to elevate the clarity and aesthetics of YouTube videos. From adjusting saturation and contrast to fine-tuning brightness levels, users can personalize their viewing experience to enhance comprehension and engagement. By applying these dynamic filters, users can transform mundane videos into captivating learning experiences. Dive into the world of visual enhancement with the following filter shortcuts:
+
+- q: Decrease saturation by 0.1 increments.
+- w: Increase saturation by 0.1 increments.
+- e: Decrease contrast by 0.5 increments.
+- r: Increase contrast by 0.5 increments.
+- v: Clears all filters.
+
+In addition to these standard adjustments, our extension introduces a revolutionary "invert" filter to alleviate eye strain caused by bright backgrounds commonly found in educational videos. By toggling the invert filter using the x key, users can seamlessly mitigate eye fatigue and prolong their study sessions with ease.
+
+- x: Toggle invert filter.
+- z: Toggle the full menu box including all the controls.
+
+
+
+How to Use: Empowering Seamless Integration ---------------------------------------------------------------------------
+
+Unlock the full potential of YouTube Controls (For Students) with our seamless integration guide:
+
+1. Download: Begin by downloading the extension from your preferred browser's extension store.
+2. Access: Navigate to the extensions menu in your browser toolbar and locate "YouTube Controls (For Students)."
+3. Launch: Open YouTube and select any video to begin your learning session.
+4. Initiate: Click on "YouTube Controls (For Students)" to activate the extension (optionally, pin it for quick access).
+5. Engage: A popup window will appear, providing essential details and developer information.
+6. Refresh: Refresh your YouTube page to implement the extension's enhancements seamlessly.
+7. Explore: Discover the tune icon added to the controls panel at the bottom right of the YouTube player, signaling the successful integration of the extension.
+8. Enjoy: Immerse yourself in a transformative learning experience, leveraging the full suite of controls to optimize your YouTube journey.
+
+
+Technical Insights: Harnessing the Power of DOM Manipulation -------------------------------------------------------------------------
+
+Behind the scenes, YouTube Controls (For Students) leverages the Document Object Model (DOM) of YouTube, seamlessly interfacing with its elements to deliver a seamless and intuitive user experience. Through meticulous DOM manipulation, the extension fetches and modifies elements to implement the advanced functionalities described above, ensuring a cohesive and responsive user interface.
+
+Experience the Future of YouTube Learning: Elevate Your Study Sessions Today
+
+Embark on a journey of enhanced learning and productivity with YouTube Controls (For Students). From customizable playback speeds to dynamic visual filters, our extension redefines the YouTube experience for students worldwide. Join the revolution and unlock the full potential of educational content on YouTube today.
+
+
+Why Choose YouTube Controls (For Students)? -------------------------------------------------------------------------------------------
+
+Finally, why should you choose YouTube Controls (For Students)? As a fellow student, I've often found myself wishing for enhanced controls while learning on YouTube. This desire sparked the creation of this extension. Let me assure you, it has been a game-changer for me personally. Not only has it significantly boosted my productivity, but it has also deepened my understanding of web development through the process of creating and deploying it. The journey of working on this project has been immensely rewarding, and seeing it benefit others is truly fulfilling. Rest assured, I am committed to continuously improving and expanding its functionality in future versions. Stay tuned for even more features and controls to further enhance your YouTube learning experience.
+
+Feel free to fork this repository and play around the code of this extension's files, its a great way to learn code.
+
+Thank You.
+
+(! I used chatgpt for proofReading and formatting the text, Down there is my original text if you have free time to read it);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+My original text: -
+
+
+Youtube Controls (For Students) is Useful Youtube Extension that a student can use to increase productivity in learning from Youtube (As we do all the time), It enables you to use YouTube more efficiently when studying by handing you more controls that native youTube does not comes with, This version (v0.0.1) allow you the following Main Functinalities :-
+
+1. Playback Speed Control - You will ask what's new in that, the native youtube also allows us to control the Playback speed, but here is the catch, it allow you to control the speed of your video upto 10x and not only that i also allows you to control the Playback speed by your keyboard with reduces you time to interact with the youtube setting itself and then changing it, it makes interact with your Playback speed and changing it more fun and efficient, the shortcuts to change Playback speed are follow:-
+
+a - decreases Playback speed by 0.25.
+s - increases Playback speed by 0.25,
+d - resets the Playback speed to 10x
+
+2. Filters Control - In this Extension you can apply filter like saturation contrast brightness, and can make your video more visually appealing, here are the shortcut keys for controlling these filter:-
+
+q - decreases saturation by .1 step
+w - increase saturation by .1 step
+e - decreases contrast by .5 step
+r - increase contrast by .5 step
+
+Here is one more filter that will help students to reduce eye stress, you often came across education videos that are a white background and it irks our eyes alot, so to encounter that isssue there is a filter included in the extension that lets you invert the video so that you eyes stress can be tackled, shortcut to toggle invert filter is x key.
+
+Here are the the steps to use this extnesion:-
+1. Download it
+2. go to extensions in your browser on the top of the tool bar, and open youtube and play any video on that and then go to your browser and follow the following steps to complete the open time process and setup
+3. Click on "YouTube Controls (For Students), optionally you can also pin it if you want"
+4. Once you click on it, you will see a popup with some details and social media link of the developer (that's me by the way).
+5. Refresh your Youtube page
+6. You will se a tune icon added in the controls panel on your youTube player in the bottom right corner.
+7. Enjoy learning.
+
+This extnesion deals with the DOM (Document object model) of Youtube, fetches elements form its DOM and manipulates it to achieve the underlying mentioned Functinalities
+
+Lastly but not the least, why do we need this extension, we need it because i am a student myself and i always wondered that youtube must include these controls when i am learning form youtube, that triggered an idea in me, to make this entension, and trust me it helped me alot to boost my productivity and also enhanched my knownledge of web developement, and it was a great experience working on that project and deploying it so that other's can use it, i will continue working on that and make it better in terms of efficiency and will also add some more functionaliies and controls in the upcoming versions.
+
+You can fork this repository and play around the code of this extension.

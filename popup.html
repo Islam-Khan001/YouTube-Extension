@@ -3,46 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Playback Speed Controller</title>
-  <style>
-    body {
-      width: 200px;
-      padding: 10px;
-      background-color: #08080c;
-      color: white;
-    }
-    input[type="range"] {
-      width: 100%;
-    }
-    p {
-        color: white;
-    }
-    label {
-        color: white;
-    }
-    #speedRange {
-        background-color: #f50000;
-        /* width: 1000px; */
-        height: 2px;
-        size: 10px;
-        column-rule-color: #f50000;
-    }
-  </style>
+  <title>Youtube Controls</title>
+  <link rel="stylesheet" href="popupStyle.css">
+  <script src="popup.js"></script>
 </head>
 <body>
-    <h2>Playback Speed</h2>
-    <label for="speedRange">Playback Speed:</label>
-    <input type="range" min="0.25" max="10" step="0.25" value="1" id="speedRange" aria-labelledby="speedLabel">
-    <p id="speedValue"></p>
-    <script src="popup.js"></script>
-  </body>
   
+  <div id='text-container'>
+    <p>(Youtube Controls)</p>
+    <p>If you like it, you can give me a follow!</p>
+  </div>
+
+  <div class="link-container">
+    <a id="linkedin" href="https://www.linkedin.com/in/islam-khan-4644211b2" target="_blank">
+      <p>LinkedIn</p>
+      <img class="a-button" src="linkedin.png" alt="">
+    </a>
+    <a class="middle-a" href="https://www.instagram.com/fazeflynn?igsh=MXFxdnZwc2dhMTZkNA==" target="_blank">
+      <p>Insta</p>
+      <img class="a-button" src="instagram.png" alt="">
+    </a>
+    <a href="https://github.com/Islam-Khan001" target="_blank">
+      <p>GitHub</p>
+      <img class="a-button" src="github.png" alt="">
+    </a>    
+  </div>
+
+  <label id="help-label" for="help">Help?
+    <!-- <span class="arrow-span"><img id="label-arrow" src="arrowdown.png" alt=""></span> -->
+  </label>
+  <input type="checkbox" name="help" id="help">
+
+  <div class="helps">
+    <p>Q - Decreases saturation.</p>
+    <p>W - Increases saturation.</p>
+
+    <p>E - Decreases contrast.</p>    
+    <p>R - Increases contrast.</p>
+
+    <p>A - Decreases speed by 0.25.</p>
+    <p>S - Increases speed by 0.25.</p>
+
+    <p>X - Inverts video.</p>    
+    <p>Z - Show all controls.</p>
+
+    <p class="normal-p">You might need to Refresh the page after clicking it.</p>
+
+    <a href="help.html" target="_blank">More help?</a>
+  </div>
+
+
+</body>
 </html>
 
 
-<!-- <body>
-    <h2>Playback Speed</h2>
-    <input type="range" min="0.25" max="10" step="0.25" value="1" id="speedRange">
-    <p id="speedValue"></p>
-    <script src="popup.js"></script>
-</body> -->
+
+
+
+
+
+<!-- <div id='text-container'>
+  <p>Follow me to make Pikachu Happy</p>
+</div>
+
+<div class="pikachu-container">
+  <img id="sad" src="pikachu-sad.png" alt="">
+  <img id="happy" src="pikachu-happy.png" alt="">
+</div> -->

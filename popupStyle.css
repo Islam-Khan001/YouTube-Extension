@@ -1,0 +1,215 @@
+:root {
+    --primary-color: #1a2031;
+    --secondary-color: #222d32;
+    --text-color : #e0d0e4; 
+    --font-size: 14px;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    height: 0%;
+    width: 0%;
+    /* -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; */
+}
+
+body {
+    width: 280px;
+    /* height: 150px; */
+    height: auto;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    box-sizing: border-box;
+}
+
+p{
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-size: var(--font-size);
+    font-weight: 600;
+    color: aliceblue;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+}
+
+
+
+
+#text-container{
+
+    background-color: #2d344b;
+    height: 20%;
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+.link-container{
+    
+
+    /* background-color: rgb(255, 251, 0); */
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+
+}
+
+.middle-a{
+    border-left: 1px solid #313d4e;
+    border-right: 1px solid #313d4e;
+}
+
+a { 
+    display: block;
+    color: aliceblue;  
+    /* padding-left: 20px; */
+    width: 100%;
+    height: 40px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+    align-items: center;
+}
+
+/* #linkedin:hover {
+    
+
+} */
+
+a:hover{
+    background-color: #232a3e;
+}
+
+.a-button {
+    height: 20px;
+    width: 20px;
+}
+
+/* #help-container{
+    height: auto;
+    width: 100%;
+    background-color: red;
+
+} */
+
+#help-label{
+    /* position: absolute; */
+    color: aliceblue;
+    /* right: 0%;
+    top: 0%; */
+    background-color: #1e293b;
+    display: block;
+    width: 100%;
+    text-align: right;
+    /* position: relative;
+    right: 0%; */
+
+}
+
+.arrow-span {
+    height: 100%;
+    width: 25px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#label-arrow{
+    height: 20px;
+    width: 20px;
+    /* padding-left: 10px; */
+}
+
+#help{
+    display: none;
+}
+
+/* #help {
+} */
+
+
+
+.helps{
+   
+    /* position: absolute; */
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    /* display: none; */
+    /* background-color: yellow; */
+    transition: height .3s ease;
+
+}
+
+#help:checked + .helps {
+    /* border-top: 1px solid rgb(64, 64, 64); */
+    /* display: block; */
+    height: 225px;
+    /* height: auto; */
+}
+
+.helps p {
+    /* position: absolute; */
+    display: block;
+    padding-left: 2%;
+    height: auto;
+    text-align:left;
+    /* background-color: aqua; */
+}
+
+.helps a {
+
+    height: auto;
+    display: block;
+
+    text-align: right;
+
+}
+
+.normal-p{
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+
+ /* For cute face in next version ----------------------------- */
+
+/* .helps a {
+    display: block;
+} */
+
+/* .pikachu-container{
+
+    background-color: #f4df3e;
+    height: 100%;
+    width: 50%;
+
+} */
+
+/* #sad{
+    height: 100%;
+    width: 100%;
+}
+
+#happy{
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+
+    height: 100%;
+} */

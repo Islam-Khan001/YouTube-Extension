@@ -1,23 +1,31 @@
 {
     "manifest_version": 3,
-    "name": "YouTube MyEx",
-    "version": "1.0",
-    "description": "A Chrome extension to control playback speed on YouTube.",
-    "permissions": ["activeTab", "scripting"],
+    "name": "YouTube Controls (For Students)",
+    "version": "1.1.1",
+    "description": "A Chrome extension that gives you more control over YouTube.",
+    "author": "Islam kathat",
+    "homepage_url": "https://www.linkedin.com/in/islam-khan-4644211b2",
+    "icons": {
+      "16": "myicon16.png",
+      "48": "myicon48.png",
+      "128": "myicon128.png"
+  },
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+        "16": "myicon16.png",
+        "48": "myicon48.png",
+        "128": "myicon128.png"
       }
     },
     "background": {
       "service_worker": "background.js"
     },
+    "options_page": "help.html",
     "content_scripts": [
       {
-        "matches": ["*://www.youtube.com/*"],
+        
+        "matches": ["*://www.youtube.com/watch?*"],
         "js": ["content.js"],
         "css": ["contentStyle.css"]
       }

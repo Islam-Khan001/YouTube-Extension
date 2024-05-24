@@ -2,6 +2,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
+.speed-ind-div {
+    /* display: none; */
+    position: absolute;
+    top: 3%;
+    /* right: 1%; */
+    width: 100%;
+    height: 30px;
+    /* background-color: blue; */
+    opacity: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: opacity .2s ease;
+}
+
+/*   */
+
+#speed-ind {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background-color: #000000;
+    /* top right bottom left */
+    /* padding: 2px 12px 2px 12px;  */
+    padding: 2px;
+    opacity: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    width: auto;
+    height: 30px;
+    border-radius: 20px;
+
+}
+
+#speed-ind-span{
+    font-size: 1.4rem;
+    font-weight: 700;
+
+}
+
+
 .flt-button {
 
     /* You will not be able to apply any properties to it,
@@ -39,16 +86,16 @@
 }
 
 
-video {
+/* video { */
     /* filter: invert(100%); */
-    filter: saturate(150%);
-}
+    /* filter: saturate(150%); */
+/* } */
 
-.MyOwnPlayer {
-    /* filter:invert(100%); */
-    /* it is working    */
-
-}
+/* .MyOwnPlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+} */
 
 .myContainer {
     z-index: 100;
@@ -74,6 +121,9 @@ video {
     -ms-user-select: none;
     user-select: none;
 }
+
+
+/* invert toggle button ----------------------------------------------------------------------------*/
 
 .invert-tog{
     /* position: absolute; */
@@ -429,11 +479,11 @@ video {
 /* Slider Customizations---------------------------------------------------------------------------- */
 
 input::-webkit-slider-runnable-track {
+    /* height: 2px; */
     display: block;
     box-sizing:border-box;
     appearance: none;
     width: 100%;
-    /* height: 2px; */
     border-radius: 5px;
     background: solid #ff1a1a;
     outline: none;
@@ -444,16 +494,31 @@ input::-webkit-slider-runnable-track {
 }
   
 input[type=range]::-moz-range-track {
-    /* height: 3px; */
-    background-color: #ff1a1a;
-    /* fill: #ff1a1a; */
-
-
+    display: block;
+    box-sizing:border-box;
+    appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    background: solid #ff1a1a;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    fill: #ff1a1a;
+    color: #ff1a1a;
 }
   
 input[type=range]::-ms-track {
-    /* height: 3px; */
-    background-color: grey;
+    display: block;
+    box-sizing:border-box;
+    appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    background: solid #ff1a1a;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    fill: #ff1a1a;
+    color: #ff1a1a;
 
 }
 
@@ -494,7 +559,6 @@ input::-webkit-slider-thumb {
   
   
 
-/* invert toggle button ----------------------------------------------------------------------------*/
 
 
 

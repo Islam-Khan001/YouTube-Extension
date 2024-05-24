@@ -1,0 +1,176 @@
+:root {
+    /* --primary-color: #100e1f; */
+    --primary-color: #100e1f;
+    --secondary-color: #161424;
+    --hover-color: #3d3d3d;
+    --main-text-color: #ffffff;
+
+    /* --main-padding: 20px; */
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    /* font-size: 20px; */
+    font-size: 3.3vmin;
+}
+
+/* .urbanist-<uniquifier> {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+
+body {
+    /* background-color: var(--primary-color);     */
+}
+
+p {
+    /* font-size: 20px; */
+    padding-top:20px;
+}
+
+span{
+    font-weight: 800;
+}
+
+#main-container {
+    background-color: var(--primary-color);
+    height: auto;
+    width: 100%;
+    color: var(--main-text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+.div-pad {
+    padding: 20px 50px 20px 50px;
+    margin-bottom: 10px;
+
+    width: 90%;
+
+    border-radius: 10px;
+
+    background-color: var(--secondary-color);
+
+}
+
+.p-pad {
+    padding: 10px 50px 0px 100px;
+    
+
+}
+
+.extra-pad {
+    padding: 10px 0px 0px 250px;
+    
+}
+
+
+#details-div {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap; */
+    margin-top: 10px;
+
+    background-color: #1d112c;
+
+    
+}
+
+
+
+.make-center {
+    /* background-color: #fff; */
+    padding-top: 20px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap; */
+    width: 100%;
+}
+
+.no-pad{
+    padding: 1px;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+
+
+
+h1 {
+    /* display: block; */
+    /* flex: 1 1 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* text-align: center; */
+}
+
+#tutorial-div {
+    /* background-color: #fff; */
+}
+
+#video-div {
+    /* background-color: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#tutorial-video{
+    width: 90%;
+
+    border: 1px solid grey;
+
+    border-radius: 10px;
+    /* padding: 5px; */
+}
+
+#img-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #fff; */
+
+    width: 100%;
+
+    flex-wrap: wrap;
+}
+
+.myimgs{
+    width: 90%;
+
+    /* flex: auto; */
+
+    border: 1px solid grey;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+    /* padding: 5px; */
+
+}
+
+#dev-name {
+    padding: 0px;
+
+}
