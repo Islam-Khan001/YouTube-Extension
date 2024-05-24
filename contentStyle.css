@@ -49,6 +49,53 @@
 }
 
 
+.speed-ind-div {
+    /* display: none; */
+    position: absolute;
+    top: 3%;
+    /* right: 1%; */
+    width: 100%;
+    height: 30px;
+    /* background-color: blue; */
+    opacity: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: opacity .2s ease;
+}
+
+/*   */
+
+#speed-ind {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background-color: #000000;
+    /* top right bottom left */
+    /* padding: 2px 12px 2px 12px;  */
+    padding: 2px;
+    opacity: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    width: auto;
+    height: 30px;
+    border-radius: 20px;
+
+}
+
+#speed-ind-span{
+    font-size: 1.4rem;
+    font-weight: 700;
+
+}
+
+
 .flt-button {
 
     /* You will not be able to apply any properties to it,
@@ -121,6 +168,9 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+
+/* invert toggle button ----------------------------------------------------------------------------*/
 
 
 /* invert toggle button ----------------------------------------------------------------------------*/
@@ -480,6 +530,7 @@
 
 input::-webkit-slider-runnable-track {
     /* height: 2px; */
+    /* height: 2px; */
     display: block;
     box-sizing:border-box;
     appearance: none;
@@ -493,19 +544,7 @@ input::-webkit-slider-runnable-track {
     color: #ff1a1a;
 }
   
-input[type=range]::-moz-range-track {
-    display: block;
-    box-sizing:border-box;
-    appearance: none;
-    width: 100%;
-    border-radius: 5px;
-    background: solid #ff1a1a;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    fill: #ff1a1a;
-    color: #ff1a1a;
-}
+
   
 input[type=range]::-ms-track {
     display: block;
@@ -519,7 +558,6 @@ input[type=range]::-ms-track {
     margin: 0;
     fill: #ff1a1a;
     color: #ff1a1a;
-
 }
 
 input::-webkit-slider-thumb {

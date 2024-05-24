@@ -2,7 +2,7 @@
 
 console.log("Hello from content.js, i am working");
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
 
   console.log("Working from inside");
   let player;
@@ -48,11 +48,10 @@ window.addEventListener('load', function () {
   }
 
   filterButton.addEventListener("click", toggleMyContainer);
-  document.addEventListener("keydown", function (event) {
-    if (event.key == "z") {
+      document.addEventListener("keydown", function (event) {
+      if (event.key == "z") {
       // event.preventDefault();
       console.log("pressed z");
-
       toggleMyContainer();
     }
   });
@@ -143,8 +142,12 @@ window.addEventListener('load', function () {
   });
 
   function resetAllFs(){
+  function resetAllFs(){
     saturateRange.value = brightRange.value = contrastRange.value = 100;
     updateFilters();
+  };
+
+  resetAllFilters.addEventListener("click", resetAllFs);
   };
 
   resetAllFilters.addEventListener("click", resetAllFs);
@@ -168,6 +171,13 @@ window.addEventListener('load', function () {
   });
 
   function updateFilters() {
+    // console.log("sat from func ", saturateRange.value);
+    if (checkInput.checked){
+      player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%) invert(100%)`;
+    } else {
+      // console.log("sat from else ", saturateRange.value);
+      player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%)`;
+    }
     // console.log("sat from func ", saturateRange.value);
     if (checkInput.checked){
       player.style.filter = `saturate(${saturateRange.value}%) contrast(${contrastRange.value}%) brightness(${brightRange.value}%) invert(100%)`;
@@ -342,6 +352,114 @@ window.addEventListener('load', function () {
     }
   });
 
+  function addPadding(){
+    speedIndP.style.padding = '2px 12px 2px 12px'
+  }
+
+  function removePadding(){
+    speedIndP.style.padding = '2px'
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "s" && player.playbackRate < 10 && !(event.key == ' ')) {
+      // event.preventDefault();
+      player.playbackRate +=0.25;
+      speedRange.value = player.playbackRate;
+      currSpeed.textContent = speedRange.value;
+      speedIndicator.textContent = (player.playbackRate).toFixed(2) + 'x';
+      removePadding();
+      showSpeedInd();      
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "a" && player.playbackRate > 0.25 && !(event.key == ' ')) {
+      // event.preventDefault();
+      player.playbackRate -=0.25;
+      speedRange.value = player.playbackRate;
+      currSpeed.textContent = speedRange.value;
+      speedIndicator.textContent = (player.playbackRate).toFixed(2) + 'x';
+      removePadding();
+      showSpeedInd();      
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "d" && !(event.key == ' ')) {
+      // event.preventDefault();
+      player.playbackRate = 1;
+      speedRange.value = player.playbackRate;
+      currSpeed.textContent = 1;
+      speedIndicator.textContent = '1.00x';
+      removePadding();
+      showSpeedInd();      
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "q") {
+      // event.preventDefault();
+      saturateRange.value -= 10;
+      updateFilters(); 
+
+      addPadding();
+      speedIndicator.textContent = 'Saturation : ' + saturateRange.value/100;
+      showSpeedInd();          
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "w") {
+      // event.preventDefault();
+      // console.log("Before : ", saturateRange.value);
+      // var currentValue = parseInt(saturateRange.value);
+      saturateRange.value = parseInt(saturateRange.value) + 10;
+      // currentValue += 10;
+      // saturateRange.value = currentValue;
+      // console.log("After : ", saturateRange.value);
+      updateFilters();  
+
+      addPadding();
+      speedIndicator.textContent = 'Saturation : ' + saturateRange.value/100;
+      showSpeedInd();          
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "e") {
+      // event.preventDefault();
+      contrastRange.value -= 5;
+      updateFilters(); 
+      
+      addPadding();      
+      speedIndicator.textContent = 'Contrast : ' + (contrastRange.value/100).toFixed(2);
+      showSpeedInd(); 
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "r") {
+      // event.preventDefault();
+      contrastRange.value = parseInt(contrastRange.value) + 5;
+      // console.log("sat from value ", saturateRange.value);
+      updateFilters();  
+
+      addPadding();      
+      speedIndicator.textContent = 'Contrast : ' + (contrastRange.value/100).toFixed(2);
+      showSpeedInd(); 
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "v") {
+      // event.preventDefault();
+      resetAllFs();
+      addPadding();      
+      speedIndicator.textContent = 'Filters Cleared';
+      showSpeedInd(); 
+    }
+  });
+
   let checkInput = document.querySelector("#check-inp");
 
   checkInput.addEventListener("click", () => {
@@ -369,6 +487,21 @@ window.addEventListener('load', function () {
     }
   });
 
+
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "x") {
+      // event.preventDefault();
+      if(checkInput.checked){
+        checkInput.checked = false;
+        updateFilters();
+      } else {
+        checkInput.checked = true;
+        updateFilters();
+      }
+    }
+  });
+
   let iconArrow = document.querySelector("#icon-arrow");
 
   filterDiv.addEventListener("click", () => {
@@ -378,8 +511,13 @@ window.addEventListener('load', function () {
     speedDiv.style.display = "none";
     filterContainer.style.display = "block";
   });
+
 });
 
+
+
+
+// Some of the code is in comments for testing purposes and for some future funtionalities that have not been figured out yet
 
 
 
