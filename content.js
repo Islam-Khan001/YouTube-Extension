@@ -14,6 +14,18 @@ window.addEventListener('load', function() {
 
   let ytMenu = document.querySelector(".ytp-settings-menu");
 
+  const inputFields = document.querySelectorAll("input[type='text']");
+  let isAnyInputFocused = false;
+
+  // Helper function to check if any input is focused
+  function checkFocus() {
+    isAnyInputFocused = Array.from(inputFields).some(input => input === document.activeElement);
+  }
+
+  inputFields.forEach(inputField => {
+    inputField.addEventListener("focus", checkFocus);
+    inputField.addEventListener("blur", checkFocus);
+  });
 
 
   player = document.querySelector("video");
@@ -46,7 +58,7 @@ window.addEventListener('load', function() {
 
   filterButton.addEventListener("click", toggleMyContainer);
       document.addEventListener("keydown", function (event) {
-      if (event.key == "z") {
+      if (event.key == "z"  && !isAnyInputFocused) {
       console.log("pressed z");
       toggleMyContainer();
     }
@@ -87,7 +99,7 @@ window.addEventListener('load', function() {
   let brightDiv = document.createElement("div");
   brightDiv.className = "bright-div";
   brightDiv.innerHTML =
-    '<label id="p-brightness" for="brightness-inp">Brightness</label><span id="brightness-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="50" max="150" step="10" value="100" id="brightness-inp" aria-labelledby="brightLabel">';
+    '<label id="p-brightness" for="brightness-inp">Brightness</label><span id="brightness-reset"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg></span><input type="range" min="50" max="150" step="5" value="100" id="brightness-inp" aria-labelledby="brightLabel">';
 
   let filterContainer = document.createElement("div");
   filterContainer.id = "filter-container";
@@ -230,7 +242,7 @@ window.addEventListener('load', function() {
   }
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "s" && player.playbackRate < 10 && !(event.key == ' ')) {
+    if (event.key == "s" && player.playbackRate < 10 && !(event.key == ' ') && !isAnyInputFocused) {
       player.playbackRate +=0.25;
       speedRange.value = player.playbackRate;
       currSpeed.textContent = speedRange.value;
@@ -241,7 +253,7 @@ window.addEventListener('load', function() {
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "a" && player.playbackRate > 0.25 && !(event.key == ' ')) {
+    if (event.key == "a" && player.playbackRate > 0.25 && !(event.key == ' ') && !isAnyInputFocused) {
       player.playbackRate -=0.25;
       speedRange.value = player.playbackRate;
       currSpeed.textContent = speedRange.value;
@@ -252,7 +264,7 @@ window.addEventListener('load', function() {
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "d" && !(event.key == ' ')) {
+    if (event.key == "d" && !(event.key == ' ') && !isAnyInputFocused) {
       player.playbackRate = 1;
       speedRange.value = player.playbackRate;
       currSpeed.textContent = 1;
@@ -263,29 +275,29 @@ window.addEventListener('load', function() {
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "q") {
+    if (event.key == "q" && !isAnyInputFocused) {
       saturateRange.value -= 10;
       updateFilters(); 
 
       addPadding();
-      speedIndicator.textContent = 'Saturation : ' + saturateRange.value/100;
+      speedIndicator.textContent = 'Saturation : ' + (saturateRange.value/100).toFixed(2);
       showSpeedInd();          
     }
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "w") {
+    if (event.key == "w" && !isAnyInputFocused) {
       // event.preventDefault();
       saturateRange.value = parseInt(saturateRange.value) + 10;
       updateFilters();  
       addPadding();
-      speedIndicator.textContent = 'Saturation : ' + saturateRange.value/100;
+      speedIndicator.textContent = 'Saturation : ' + (saturateRange.value/100).toFixed(2);
       showSpeedInd();          
     }
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "e") {
+    if (event.key == "e" && !isAnyInputFocused) {
       contrastRange.value -= 5;
       updateFilters(); 
       
@@ -295,8 +307,9 @@ window.addEventListener('load', function() {
     }
   });
 
+
   document.addEventListener("keydown", function (event) {
-    if (event.key == "r") {
+    if (event.key == "r" && !isAnyInputFocused) {
       contrastRange.value = parseInt(contrastRange.value) + 5;
       updateFilters(); 
       addPadding();      
@@ -306,7 +319,29 @@ window.addEventListener('load', function() {
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "v") {
+    if (event.key == "]" && !isAnyInputFocused) {
+      // event.preventDefault();
+      brightRange.value = parseInt(brightRange.value) + 5;
+      updateFilters();  
+      addPadding();
+      speedIndicator.textContent = 'Brightness : ' + (brightRange.value/100).toFixed(2);
+      showSpeedInd();          
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "[" && !isAnyInputFocused) {
+      brightRange.value -= 5;
+      // console.log("working here brihgt : " + brightRange.value);
+      updateFilters(); 
+      addPadding();      
+      speedIndicator.textContent = 'Brightness : ' + (brightRange.value/100).toFixed(2);
+      showSpeedInd(); 
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "v" && !isAnyInputFocused) {
       resetAllFs();
       addPadding();      
       speedIndicator.textContent = 'Filters Cleared';
@@ -331,7 +366,7 @@ window.addEventListener('load', function() {
 
 
   document.addEventListener("keydown", function (event) {
-    if (event.key == "x") {
+    if (event.key == "x"  && !isAnyInputFocused) {
       if(checkInput.checked){
         checkInput.checked = false;
         updateFilters();
